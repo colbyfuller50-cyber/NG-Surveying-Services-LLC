@@ -46,7 +46,14 @@
       <label for="name">Tax Map (If Known)</label>
       <input type="text" id="details" name="details" required>
       <label for="job">Type of Job</label>
-      <input type="text" id="job" name="job" required>
+<select id="job" name="job" required>
+  <option value="">-- Please select a job type --</option>
+  <option value="Residential Survey">Residential Survey</option>
+  <option value="Commercial Survey">Commercial Survey</option>
+  <option value="Construction Staking">Construction Staking</option>
+  <option value="Topographic Survey">Topographic Survey</option>
+  <option value="Boundary Survey">Boundary Survey</option>
+</select>
       <label for="details">Project Details</label>
       <textarea id="details" name="details" rows="5" required></textarea>
       <button type="submit" class="btn">Submit Request</button>
