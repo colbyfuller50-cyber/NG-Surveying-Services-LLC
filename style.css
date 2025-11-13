@@ -176,12 +176,23 @@ footer {
   background-color: #0e2239;
   color: white;
   text-align: center;
-  padding: 25px 0;
+  padding: 19px 0;
   position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 
 /* ---------- Mobile Navigation (Dropdown Fix) ---------- */
 @media (max-width: 768px) {
