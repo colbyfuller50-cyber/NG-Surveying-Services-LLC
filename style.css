@@ -277,3 +277,31 @@ footer {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
+
+/* ---------- Fix the Footer White Line ---------- */
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #0e2239; /* match your footer background */
+}
+
+footer {
+  background-color: #0e2239;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+/* ---------- footer always stuck to the bottom of short pages ---------- */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
