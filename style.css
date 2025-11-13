@@ -195,86 +195,71 @@ footer {
 }
 
   /* ---------- MOBILE NAVBAR STYLING ---------- */
-.navbar {
-  position: relative;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  transition: all 0.3s ease;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links li a.active,
-.nav-links li a:hover {
-  color: #ff4500;
-}
-
-/* Hamburger Menu Icon */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #ff4500;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-/* Mobile Responsive Styling */
 @media (max-width: 768px) {
+  /* Stack items vertically */
+  header {
+    flex-wrap: wrap;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
     background: #0e2239;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     right: 0;
     width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid #ff4500;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    z-index: 999;
+    transition: all 0.4s ease-in-out;
   }
 
   .nav-links.active {
     display: flex;
-    animation: slideDown 0.4s ease forwards;
+    animation: fadeIn 0.4s ease forwards;
   }
 
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-15px); }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  .nav-links li a {
+    font-size: 1.3rem;
+    font-weight: 600;
   }
 
   .hamburger {
     display: flex;
+    position: relative;
+    z-index: 1000; /* Keep button on top */
   }
 
   .site-logo {
     font-size: 1.2rem;
+    z-index: 1001;
+  }
+
+  /* Dim background effect when open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
   }
 }
 
-/* Hamburger toggle animation */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
 
