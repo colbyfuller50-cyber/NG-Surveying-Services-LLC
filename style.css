@@ -114,3 +114,26 @@ footer {
     color: #ff4500;
     font-size: 1.8rem;
 }
+
+/* Top-left brand styling */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Compass icon color to match your orange accent */
+.site-logo i {
+  color: #ff4500;
+  font-size: 1.9rem;
+}
+
+/* Hover effect for modern feel */
+.site-logo:hover {
+  color: #ff7f50; /* soft orange hover */
+}
