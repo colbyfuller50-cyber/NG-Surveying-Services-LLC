@@ -137,3 +137,26 @@ footer {
 .site-logo:hover {
   color: #ff7f50; /* soft orange hover */
 }
+
+/* Compass hover animation */
+.site-logo i {
+  color: #ff4500;
+  font-size: 1.9rem;
+  transition: transform 0.6s ease, color 0.3s ease;
+}
+
+.site-logo:hover i {
+  transform: rotate(360deg);
+  color: #ff7f50; /* slightly lighter orange */
+}
+
+/* Optional subtle pulsing effect (runs continuously) */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.site-logo i {
+  animation: pulse 3s infinite ease-in-out;
+}
