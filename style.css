@@ -4,37 +4,34 @@ body {
   background-color: #f8f9fa;
   color: #333;
 }
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #0e2239;
   padding: 10px 5%;
-}
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
+}
 .logo {
   height: 60px;
 }
-
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
-
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
 }
-
-nav ul li a.active,
-nav ul li a:hover {
+nav ul li a.active, nav ul li a:hover {
   color: #f44336;
 }
-
-/* Hero Section */
 .hero {
   background: url('https://img.freepik.com/premium-photo/orange-surveying-instrument-tripod-set-up-dirt-road-mountainous-desert_1031128-14061.jpg?w=740') center/cover no-repeat;
   height: 80vh;
@@ -43,61 +40,32 @@ nav ul li a:hover {
   justify-content: center;
   color: white;
   text-align: center;
-  position: relative;
 }
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.55); /* black overlay for readability */
-}
-
-.hero-text {
-  position: relative;
-  z-index: 2;
-}
-
 .hero-text h1 {
   font-size: 3em;
   margin-bottom: 0.3em;
-  font-weight: 700;
 }
-
 .hero-text .btn {
   background: #f44336;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  transition: background 0.3s ease;
 }
-
-.hero-text .btn:hover {
-  background: #ff7f50; /* orange hover */
-}
-
-/* Content and Layout */
 .content {
   padding: 50px 10%;
 }
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
 .service {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -105,10 +73,97 @@ nav ul li a:hover {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.contact-form input, .contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.btn {
+  background: #0e2239;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer {
+  background: #0e2239;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 2em;
+  }
 }
 
-.contact-form input,
-.contact-form textarea {
-  pa
+
+/* Updated site logo styling */
+.site-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    gap: 8px;
+}
+
+.site-logo i {
+    color: #ff4500;
+    font-size: 1.8rem;
+}
+
+/* Top-left brand styling */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Compass icon color to match your orange accent */
+.site-logo i {
+  color: #ff4500;
+  font-size: 1.9rem;
+}
+
+/* Hover effect for modern feel */
+.site-logo:hover {
+  color: #ff7f50; /* soft orange hover */
+}
+
+/* Compass hover animation */
+.site-logo i {
+  color: #ff4500;
+  font-size: 1.9rem;
+  transition: transform 0.6s ease, color 0.3s ease;
+}
+
+.site-logo:hover i {
+  transform: rotate(360deg);
+  color: #ff7f50; /* slightly lighter orange */
+}
+
+/* Optional subtle pulsing effect (runs continuously) */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.site-logo i {
+  animation: pulse 3s infinite ease-in-out;
+}
+
 
