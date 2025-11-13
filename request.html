@@ -7,20 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-      <a href="index.html" class="site-logo">
-  <i class="fa-solid fa-compass"></i>
-  <span>NG Surveying Services LLC</span>
-</a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="request.html" class="active">Request Estimate</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+   <!-- HEADER -->
+<header>
+  <a href="index.html" class="site-logo">
+    <i class="fa-solid fa-compass"></i> NG Surveying Services LLC
+  </a>
+  
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="request.html" class="active">Request</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
   <section class="content">
     <h2>Request an Estimate</h2>
     <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
@@ -38,5 +46,17 @@
   <footer>
     <p>&copy; 2025 NG Surveying Services LLC | Columbia, SC</p>
   </footer>
+   <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const body = document.body;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+  });
+</script>
+
 </body>
 </html>
