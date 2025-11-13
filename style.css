@@ -10,6 +10,11 @@ header {
   align-items: center;
   background: #0e2239;
   padding: 10px 5%;
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
 }
 .logo {
   height: 60px;
@@ -28,7 +33,7 @@ nav ul li a.active, nav ul li a:hover {
   color: #f44336;
 }
 .hero {
-  background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  background: url('https://img.freepik.com/premium-photo/orange-surveying-instrument-tripod-set-up-dirt-road-mountainous-desert_1031128-14061.jpg?w=740') center/cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -113,4 +118,78 @@ footer {
 .site-logo i {
     color: #ff4500;
     font-size: 1.8rem;
+}
+
+/* Top-left brand styling */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Compass icon color to match your orange accent */
+.site-logo i {
+  color: #ff4500;
+  font-size: 1.9rem;
+}
+
+/* Hover effect for modern feel */
+.site-logo:hover {
+  color: #ff7f50; /* soft orange hover */
+}
+
+/* Compass hover animation */
+.site-logo i {
+  color: #ff4500;
+  font-size: 1.9rem;
+  transition: transform 0.6s ease, color 0.3s ease;
+}
+
+.site-logo:hover i {
+  transform: rotate(360deg);
+  color: #ff7f50; /* slightly lighter orange */
+}
+
+/* Optional subtle pulsing effect (runs continuously) */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.site-logo i {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+
+/* Site logo (top left corner) */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Compass icon color to match your theme */
+.site-logo i {
+  color: #ff4500;
+  font-size: 1.9rem;
+}
+
+/* Orange hover for text and icon */
+.site-logo:hover {
+  color: #ff7f50;
+}
+
+.site-logo:hover i {
+  color: #ff7f50;
 }
