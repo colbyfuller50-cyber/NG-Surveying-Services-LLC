@@ -1,6 +1,4 @@
-# N.G. Surveying Services LLC Website
-
-This is a modern, responsive website for N.G. Surveying Services LLC.
+## N.G. Surveying Services LLC 
 
 ## Pages
 - Home (index.html)
