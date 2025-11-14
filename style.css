@@ -1,21 +1,20 @@
-/* ---------- Global Styles ---------- */
-body {
+/* ---------- Global Layout ---------- */
+html, body {
+  height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f9fa; /* restore light background */
-  color: #333;
+}
+
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-html {
-  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 main {
-  flex: 1;
-}
+  flex: 1; /* This ensures the main content takes up remaining space */
 
 /* ---------- Header ---------- */
 header {
@@ -172,20 +171,6 @@ header {
 }
 
 /* ---------- Footer ---------- */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1; /* pushes footer to bottom if content is short */
-}
-
 footer {
   background-color: #0e2239;
   color: white;
