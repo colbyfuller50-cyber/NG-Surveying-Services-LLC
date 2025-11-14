@@ -5,7 +5,7 @@
 - Services (services.html)
 - Request Estimate (requestestimate.html)
 
-## HConnect Formspree
+## Connect Formspree
 1. Go to [Formspree.io](https://formspree.io)
 2. Sign up with your email and create a new form
 3. Copy your unique form endpoint (looks like `https://formspree.io/f/mabc1234`)
