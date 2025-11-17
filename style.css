@@ -51,7 +51,7 @@ header {
 }
 
 /* ✅ Responsive logo size for mobile screens */
-@media (max-width: 600px) {
+@media (max-width: 150px) {
   .site-logo .logo-img {
     height: 16px; /* Slightly larger for better visibility on mobile */
   }
