@@ -15,4 +15,4 @@
 
 ---
 
-© 2025 N.G. Surveying Services LLC | Columbia, SC
+© 2025 NG Surveying Services, LLC. | Columbia, SC
