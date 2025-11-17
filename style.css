@@ -57,22 +57,14 @@ header {
   }
 }
 
-/* Header container */
+/* ✅ Header container layout */
 .site-header .container {
   display: flex;
-  justify-content: center; /* Default: center everything */
+  justify-content: space-between; /* Logo left, menu right */
   align-items: center;
   padding: 12px 20px;
   background-color: #000;
-  flex-wrap: wrap;
-}
-
-/* Logo */
-.site-logo .logo-img {
-  height: 24px;
-  width: auto;
-  display: block;
-  transition: transform 0.6s ease;
+  flex-wrap: nowrap; /* Prevent stacking */
 }
 
 /* Navigation */
@@ -95,21 +87,21 @@ header {
   color: #ff7f50;
 }
 
-/* ✅ Mobile: logo on the left, nav below or right */
+/* ✅ Mobile: keep logo left, menu right */
 @media (max-width: 600px) {
   .site-header .container {
-    flex-direction: column;
-    align-items: flex-start; /* Logo aligns left */
+    flex-direction: row; /* Keep items side-by-side */
+    justify-content: space-between;
+    align-items: center;
   }
 
   .site-logo {
-    align-self: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
 
   .site-nav .nav-menu {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 12px;
   }
 }
 
