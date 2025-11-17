@@ -263,7 +263,7 @@ footer {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 65px; /* Adjust height to avoid overlapping the header */
+    top: 50px; /* Adjust height to avoid overlapping the header */
     right: 0;
     width: 100%;
     height: 100vh;
