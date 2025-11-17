@@ -40,16 +40,23 @@ header {
 }
 
 .site-logo .logo-img {
-  height: 15px; /* Adjust size as needed */
+  height: 15px; /* Default size for desktop */
   width: auto;
   display: block;
   transition: transform 0.6s ease;
-
 }
 
 .site-logo:hover .logo-img {
   transform: rotate(360deg);
 }
+
+/* ✅ Responsive logo size for mobile screens */
+@media (max-width: 600px) {
+  .site-logo .logo-img {
+    height: 24px; /* Slightly larger for better visibility on mobile */
+  }
+}
+
 
 
 /* ---------- Navigation ---------- */
