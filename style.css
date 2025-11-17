@@ -27,38 +27,18 @@ header {
 }
 
 /* ---------- Site Logo ---------- */
-.site-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 
-.site-logo i {
-  color: #ff4500;
-  font-size: 1.9rem;
-  transition: transform 0.6s ease, color 0.3s ease;
+.site-logo .logo-img {
+  height: 40px; /* Adjust size as needed */
+  width: auto;
+  transition: transform 0.6s ease;
   animation: pulse 3s infinite ease-in-out;
 }
 
-.site-logo:hover {
-  color: #ff7f50;
-}
-
-.site-logo:hover i {
+.site-logo:hover .logo-img {
   transform: rotate(360deg);
-  color: #ff7f50;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
 
 /* ---------- Navigation ---------- */
 .navbar {
