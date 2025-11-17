@@ -90,11 +90,14 @@ header {
 }
 
 /* ✅ Mobile: keep logo left, menu right */
+
+/* Smaller logo on mobile */
 @media (max-width: 600px) {
-  .site-header .container {
-    flex-direction: row; /* Keep items side-by-side */
-    justify-content: space-between;
-    align-items: center;
+  .site-logo .logo-img {
+    height: 16px !important; /* Force override if needed */
+  }
+}
+
   }
 
   .site-logo {
