@@ -40,7 +40,7 @@ header {
 }
 
 .site-logo .logo-img {
-  height: 40px; /* Adjust size as needed */
+  height: 35px; /* Adjust size as needed */
   width: auto;
   display: block;
   transition: transform 0.6s ease;
