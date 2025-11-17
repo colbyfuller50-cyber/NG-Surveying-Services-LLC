@@ -1,4 +1,4 @@
-## N.G. Surveying Services LLC 
+## NG Surveying Services, LLC. 
 
 ## Pages
 - Home (index.html)
