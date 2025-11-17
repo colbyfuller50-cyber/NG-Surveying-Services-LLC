@@ -28,6 +28,17 @@ header {
 
 /* ---------- Site Logo ---------- */
 
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 .site-logo .logo-img {
   height: 40px; /* Adjust size as needed */
   width: auto;
