@@ -44,7 +44,7 @@ header {
   width: auto;
   display: block;
   transition: transform 0.6s ease;
-  animation: pulse 3s infinite ease-in-out;
+
 }
 
 .site-logo:hover .logo-img {
