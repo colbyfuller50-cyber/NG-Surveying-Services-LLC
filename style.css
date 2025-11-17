@@ -50,12 +50,14 @@ header {
   transform: rotate(360deg);
 }
 
-/* ✅ Responsive logo size for mobile screens */
-@media (max-width: 150px) {
+
+/* Smaller logo on mobile */
+@media (max-width: 600px) {
   .site-logo .logo-img {
-    height: 16px; /* Slightly larger for better visibility on mobile */
+    height: 16px !important; /* Force override if needed */
   }
 }
+
 
 /* ✅ Header container layout */
 .site-header .container {
