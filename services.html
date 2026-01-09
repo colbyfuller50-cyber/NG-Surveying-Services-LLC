@@ -1,88 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services - NG Surveying</title>
-  <link rel="stylesheet" href="style.css">
-   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XY8RGSYX8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-5XY8RGSYX8');
-</script>
-  <link rel="canonical" href="https://www.ngsurveying.com/services.html">
+  <!-- Main Site Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Page-Specific Styles (Services Cards) -->
+  <style>
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .service {
+      position: relative;
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(14, 34, 57, 0.1);
+      box-shadow: 0 6px 18px rgba(14, 34, 57, 0.08);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      overflow: hidden;
+    }
+
+    /* Accent bar */
+    .service::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, #ff4500, rgba(255, 69, 0, 0.2));
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    /* Hover effect */
+    .service:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 69, 0, 0.35);
+      box-shadow:
+        0 14px 28px rgba(14, 34, 57, 0.18),
+        0 0 0 4px rgba(255, 69, 0, 0.14);
+    }
+
+    .service:hover::before {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service h3 {
+      margin: 0 0 10px;
+      color: #0e2239;
+      font-size: 1.15rem;
+    }
+
+    .service p {
+      margin: 0;
+      color: #444;
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 600px) {
+      .service {
+        padding: 18px;
+        border-radius: 12px;
+      }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XY8RGSYX8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5XY8RGSYX8');
+  </script>
+
+  <link rel="canonical" href="https://www.ngsurveying.com/services.html" />
 </head>
+
 <body>
-   <!-- HEADER -->
-<header>
-   <a href="index.html" class="site-logo">
-     <img
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="site-logo">
+      <img
         src="https://raw.githubusercontent.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/main/white-logo.png"
         alt="NG Surveying Logo"
-        class="logo
-  </a>
-  
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html"class="active" >Services</a></li>
-      <li><a href="requestestimate.html">Request Estimate</a></li>
-    </ul>
+        class="logo-img"
+      />
+    </a>
 
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-</header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="requestestimate.html">Request Estimate</a></li>
+      </ul>
 
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SERVICES -->
   <section class="content">
     <h2>Our Services</h2>
+
     <div class="services-grid">
       <div class="service">
         <h3>Boundary Surveys</h3>
-        <p>We determine and identify the locations of property corners and boundary lines using a combination of detailed research and review of record documents and field measurements. Includes drafting of a survey plat for recording</p>
+        <p>
+          We determine property corners and boundary lines using record research
+          and field measurements, including preparation of a survey plat for recording.
+        </p>
       </div>
+
       <div class="service">
         <h3>Property Line Markings</h3>
-        <p>We visibly mark property corners and boundary lines on the ground using stakes, flagging, and markers. This service provides a visible representation of your property limits for projects such as fencing, landscaping, construction, or general awareness.</p>
+        <p>
+          Visible marking of property boundaries using stakes and flagging
+          for fencing, landscaping, construction, and general awareness.
+        </p>
       </div>
+
       <div class="service">
         <h3>Closing Surveys</h3>
-        <p>We perform closing (mortgage) surveys to verify the locations of property boundaries and all improvements such as buildings, fences, driveways, walls, etc. A detailed plat is prepared to support real estate closings, refinancing, and property transfers.</p>
+        <p>
+          Mortgage surveys verifying property boundaries and improvements,
+          supporting real estate closings, refinancing, and transfers.
+        </p>
       </div>
+
       <div class="service">
         <h3>Residential Construction Staking</h3>
-        <p>We provide residential construction staking to accurately transfer a site plan to the field by marking the precise locations of proposed improvements such as house corners, foundations, and more. This service ensures the improvements are placed correctly on the lot, meets setback requirements, and allows contractors to construct efficiently and confidently.</p>
+        <p>
+          Accurate field placement of site plans to ensure structures meet
+          setbacks and construction proceeds with confidence.
+        </p>
       </div>
+
       <div class="service">
         <h3>Subdivision Surveys</h3>
-        <p>We provide Subdivision surveys to create new lots or adjust existing property boundaries in compliance with county and municipal standards. This service includes verifying existing boundary lines, establishing new lot configurations, and preparing a subdivision plat suitable for recording.</p>
+        <p>
+          Creation or adjustment of property lots in compliance with county
+          and municipal standards, including subdivision plat preparation.
+        </p>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 NG Surveying Services, LLC. | Columbia, SC</p>
   </footer>
-    <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  const body = document.body;
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    body.classList.toggle('menu-open');
-  });
-</script>
+  <!-- Mobile Nav Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      body.classList.toggle('menu-open');
+    });
+  </script>
+
 </body>
 </html>
+
