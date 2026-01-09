@@ -300,3 +300,18 @@ footer {
 
   .site-logo {
     font-size: 1.2rem;
+    
+/* --- Force original logo size --- */
+.site-logo .logo-img {
+  height: 60px;       /* ORIGINAL SIZE */
+  width: auto;
+  max-height: 60px;
+}
+
+/* Mobile adjustment (matches original intent) */
+@media (max-width: 600px) {
+  .site-logo .logo-img {
+    height: 45px;
+    max-height: 45px;
+  }
+}
