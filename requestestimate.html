@@ -1,101 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Request Estimate - NG Surveying</title>
-  <link rel="stylesheet" href="style.css">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XY8RGSYX8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-5XY8RGSYX8');
-</script>
-  <link rel="canonical" href="https://www.ngsurveying.com/requestestimate.html">
+  <!-- Main Site Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XY8RGSYX8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5XY8RGSYX8');
+  </script>
+
+  <link rel="canonical" href="https://www.ngsurveying.com/requestestimate.html" />
+
+  <!-- Page Styles (Modern Form + Layout) -->
+  <style>
+    /* Page header spacing */
+    .content {
+      padding: 55px 10%;
+    }
+
+    .page-title {
+      margin: 0 0 18px;
+      color: #0e2239;
+      font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+      letter-spacing: 0.2px;
+    }
+
+    .page-subtitle {
+      margin: 0 0 26px;
+      color: #555;
+      line-height: 1.5;
+      max-width: 72ch;
+    }
+
+    /* Two-column modern layout */
+    .estimate-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(14, 34, 57, 0.10);
+      box-shadow: 0 10px 24px rgba(14, 34, 57, 0.10);
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 18px 18px 14px;
+      background: linear-gradient(180deg, rgba(14, 34, 57, 0.06), rgba(14, 34, 57, 0.0));
+      border-bottom: 1px solid rgba(14, 34, 57, 0.08);
+    }
+
+    .card-header h3 {
+      margin: 0;
+      color: #0e2239;
+      font-size: 1.05rem;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    /* Form grid */
+    .modern-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 600;
+      color: #0e2239;
+      font-size: 0.95rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(14, 34, 57, 0.18);
+      background: #fbfcfe;
+      color: #222;
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      font-family: inherit;
+      font-size: 0.98rem;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(255, 69, 0, 0.55);
+      box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.14);
+      background: #fff;
+    }
+
+    select[multiple] {
+      min-height: 140px;
+      padding: 10px;
+      background: #fbfcfe;
+    }
+
+    .help-text {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 6px;
+    }
+
+    .btn-modern {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(14, 34, 57, 0.18);
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+      user-select: none;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: 0.98rem;
+    }
+
+    .btn-primary {
+      background: #0e2239;
+      color: #fff;
+      border-color: rgba(14, 34, 57, 0.2);
+      box-shadow: 0 10px 18px rgba(14, 34, 57, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(14, 34, 57, 0.25);
+    }
+
+    .btn-accent {
+      background: #fff;
+      color: #0e2239;
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 69, 0, 0.40);
+      box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.12);
+    }
+
+    /* Map card */
+    .map-wrap {
+      padding: 0;
+    }
+
+    .map-box {
+      width: 100%;
+      height: 360px;
+      border: 0;
+      display: block;
+    }
+
+    .map-footer {
+      padding: 14px 18px 18px;
+      border-top: 1px solid rgba(14, 34, 57, 0.08);
+      background: #fff;
+    }
+
+    .map-note {
+      margin: 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    /* Mobile */
+    @media (max-width: 980px) {
+      .estimate-layout {
+        grid-template-columns: 1fr;
+      }
+      .content {
+        padding: 45px 6%;
+      }
+    }
+
+    /* Fix logo size here just for safety (matches your original header look) */
+    .site-logo .logo-img {
+      height: 60px;
+      width: auto;
+      max-height: 60px;
+    }
+    @media (max-width: 600px) {
+      .site-logo .logo-img {
+        height: 45px;
+        max-height: 45px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-   <!-- HEADER -->
-<header>
-  <a href="index.html" class="site-logo">
-     <img
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="site-logo">
+      <img
         src="https://raw.githubusercontent.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/main/white-logo.png"
         alt="NG Surveying Logo"
-        class="logo
-  </a>
-  
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="requestestimate.html" class="active">Request Estimate</a></li>
-    </ul>
+        class="logo-img"
+      />
+    </a>
 
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-</header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="requestestimate.html" class="active">Request Estimate</a></li>
+      </ul>
+
+      <div class="hamburger" aria-label="Open Menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENT -->
   <section class="content">
-    <h2>Request an Estimate</h2>
-    <form action="https://formspree.io/f/mwpaqdaa" method="POST" class="contact-form">
-      <label for="name">Person or Company Requesting Estimate</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="_replyto" required>
-      <label for="phone">Phone Number</label>
-      <input type="text" id="phone" name="phone" required>
-      <label for="details">Property Address</label>
-      <textarea id="address" name="address" rows="2" required></textarea>
-      <button type="button" onclick="updateMap()">Preview Map</button>
-      <label for="Tax Map">Tax Map (If Known)</label>
-      <input type="text" id="Tax Map" name="Tax Map">
-      <label for="job">Please Select a Job Type</label>
-<select id="job" name="job[]" multiple size="5" required>
-  <option value="Boundary Survey">Boundary Survey</option>
-  <option value="Property Line Marking">Property Line Marking</option>
-  <option value="Closing Survey">Closing Survey</option>
-  <option value="Subdivision Survey">Subdivision Survey</option>
-</select>
-      <label for="details">Description of Survey Needs</label>
-      <textarea id="details" name="details" rows="5" required></textarea>
-      <button type="submit" class="btn">Submit Request</button>
-    </form>
-    <div class="map">
-      <iframe id="map" src="https://www.google.com/maps?q=Columbia,+SC&output=embed" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+    <h2 class="page-title">Request an Estimate</h2>
+    <p class="page-subtitle">
+      Fill out the form below and we’ll review your request. Use “Preview Map” to confirm the property address.
+    </p>
+
+    <div class="estimate-layout">
+      <!-- FORM CARD -->
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-file-signature"></i> Estimate Request Form</h3>
+        </div>
+
+        <div class="card-body">
+          <form action="https://formspree.io/f/mwpaqdaa" method="POST" class="modern-form">
+            <div class="field full">
+              <label for="name">Person or Company Requesting Estimate</label>
+              <input type="text" id="name" name="name" placeholder="Ex: John Smith or ABC Construction" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="_replyto" placeholder="you@email.com" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="text" id="phone" name="phone" placeholder="(803) 555-1234" required />
+            </div>
+
+            <div class="field full">
+              <label for="address">Property Address</label>
+              <textarea id="address" name="address" rows="2" placeholder="Street, City, State, ZIP" required></textarea>
+              <p class="help-text">Tip: Include city + state for the best map preview results.</p>
+
+              <div class="btn-row">
+                <button type="button" class="btn-modern btn-accent" onclick="updateMap()">
+                  <i class="fa-solid fa-map-location-dot"></i> Preview Map
+                </button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="taxmap">Tax Map (If Known)</label>
+              <input type="text" id="taxmap" name="Tax Map" placeholder="Ex: R123456789" />
+            </div>
+
+            <div class="field">
+              <label for="job">Job Type (Select all that apply)</label>
+              <select id="job" name="job[]" multiple required>
+                <option value="Boundary Survey">Boundary Survey</option>
+                <option value="Property Line Marking">Property Line Marking</option>
+                <option value="Closing Survey">Closing Survey</option>
+                <option value="Subdivision Survey">Subdivision Survey</option>
+                <option value="Residential Construction Staking">Residential Construction Staking</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="details">Description of Survey Needs</label>
+              <textarea id="details" name="details" rows="5" placeholder="Tell us what you need, timeline, and any known details..." required></textarea>
+            </div>
+
+            <div class="field full">
+              <button type="submit" class="btn-modern btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Submit Request
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- MAP CARD -->
+      <div class="card map-wrap">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-map"></i> Address Preview</h3>
+        </div>
+
+        <iframe
+          id="map"
+          class="map-box"
+          src="https://www.google.com/maps?q=Columbia,+SC&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+        <div class="map-footer">
+          <p class="map-note">
+            After entering the property address, click <strong>Preview Map</strong> to confirm it’s correct before submitting.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 NG Surveying Services, LLC. | Columbia, SC</p>
   </footer>
-   <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  const body = document.body;
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    body.classList.toggle('menu-open');
-  });
-</script>
+  <!-- Mobile Nav Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
 
-<script>
-  function updateMap() {
-  var address = document.getElementById("address").value;
-  var map = document.getElementById("map");
-  var encodedAddress = encodeURIComponent(address);
-  map.src = "https://www.google.com/maps?q=" + encodedAddress + "&output=embed";
-  }
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      body.classList.toggle('menu-open');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') toggleMenu();
+    });
   </script>
-  
+
+  <script>
+    function updateMap() {
+      var address = document.getElementById("address").value;
+      var map = document.getElementById("map");
+      var encodedAddress = encodeURIComponent(address);
+      map.src = "https://www.google.com/maps?q=" + encodedAddress + "&output=embed";
+    }
+  </script>
 </body>
 </html>
