@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -25,9 +25,9 @@
 
   <link rel="canonical" href="https://www.ngsurveying.com/index.html" />
 
-  <!-- Page-specific modern styles (copy/paste ready) -->
+  <!-- Page-specific modern styles -->
   <style>
-    /* Safer logo sizing + fix */
+    /* Safer logo sizing */
     .site-logo .logo-img {
       height: 60px;
       width: auto;
@@ -41,7 +41,7 @@
       }
     }
 
-    /* Hero overlay polish */
+    /* HERO with slideshow background */
     .hero {
       position: relative;
       min-height: 80vh;
@@ -53,23 +53,49 @@
       isolation: isolate;
     }
 
+    /* Slideshow layers */
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1.03);
+      transition: opacity 800ms ease, transform 1200ms ease;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      will-change: opacity, transform;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Dark overlay so text stays readable */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(14, 34, 57, 0.70),
-        rgba(14, 34, 57, 0.35)
+        rgba(14, 34, 57, 0.78),
+        rgba(14, 34, 57, 0.38)
       );
-      z-index: 0;
+      z-index: 1;
     }
 
     .hero-text {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 820px;
       padding: 0 6%;
+      color: #fff;
     }
 
     .hero-text h1 {
@@ -135,165 +161,17 @@
       background: rgba(255,255,255,0.08);
     }
 
-    /* Section container */
+    /* Section container (About section stays the same) */
     .section {
       padding: 60px 6%;
       display: flex;
       justify-content: center;
+      background: #f8f9fa;
     }
 
     .container {
       width: 100%;
       max-width: 1100px;
-    }
-
-    .section-title {
-      margin: 0 0 10px;
-      color: #0e2239;
-      font-size: clamp(1.5rem, 2.2vw, 2rem);
-      letter-spacing: 0.2px;
-    }
-
-    .section-subtitle {
-      margin: 0 0 22px;
-      color: #555;
-      line-height: 1.55;
-      max-width: 75ch;
-    }
-
-    /* Slideshow card */
-    .slideshow-card {
-      background: #fff;
-      border-radius: 18px;
-      border: 1px solid rgba(14, 34, 57, 0.10);
-      box-shadow: 0 10px 26px rgba(14, 34, 57, 0.10);
-      overflow: hidden;
-    }
-
-    .slideshow {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #0e2239;
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 500ms ease;
-    }
-
-    .slide.active {
-      opacity: 1;
-    }
-
-    .slide a {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.05);
-    }
-
-    /* Slide gradient + caption */
-    .slide::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(14,34,57,0.12), rgba(14,34,57,0.62));
-      pointer-events: none;
-    }
-
-    .caption {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 16px;
-      z-index: 2;
-      color: #fff;
-      display: grid;
-      gap: 6px;
-      max-width: 70ch;
-    }
-
-    .caption-title {
-      font-weight: 900;
-      font-size: 1.15rem;
-      margin: 0;
-      letter-spacing: 0.2px;
-    }
-
-    .caption-text {
-      margin: 0;
-      opacity: 0.92;
-      line-height: 1.4;
-      font-size: 0.98rem;
-    }
-
-    /* Controls */
-    .controls {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 12px;
-      z-index: 3;
-      pointer-events: none;
-    }
-
-    .ctrl-btn {
-      pointer-events: auto;
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.10);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
-      backdrop-filter: blur(6px);
-    }
-
-    .ctrl-btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255, 69, 0, 0.45);
-      box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.14);
-    }
-
-    /* Dots */
-    .dots {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      padding: 14px 14px 18px;
-      background: #fff;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 2px solid rgba(14, 34, 57, 0.35);
-      background: transparent;
-      cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
-    }
-
-    .dot.active {
-      background: #ff4500;
-      border-color: #ff4500;
-      transform: scale(1.05);
     }
 
     /* About section */
@@ -302,7 +180,6 @@
       grid-template-columns: 0.9fr 1.1fr;
       gap: 22px;
       align-items: start;
-      margin-top: 26px;
     }
 
     .about-card {
@@ -360,16 +237,10 @@
       color: #ff4500;
     }
 
-    /* Mobile layout */
     @media (max-width: 900px) {
       .about-grid {
         grid-template-columns: 1fr;
       }
-    }
-
-    /* Small polish for footer spacing */
-    footer {
-      margin-top: 0;
     }
   </style>
 </head>
@@ -400,8 +271,14 @@
 </header>
 
 
-  <!-- HERO -->
+  <!-- HERO (Slideshow behind text) -->
   <section class="hero">
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide active" style="background-image:url('https://github.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/blob/main/Holding%20Tripod.jpeg?raw=true');"></div>
+      <div class="hero-slide" style="background-image:url('https://github.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/blob/main/Looking%20Through%20Tripod.jpeg?raw=true');"></div>
+      <div class="hero-slide" style="background-image:url('https://github.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/blob/main/Viewing%20Plats.jpeg?raw=true');"></div>
+    </div>
+
     <div class="hero-text">
       <h1>Professional Land Surveying</h1>
       <p>Providing precise and reliable land surveying services across the Midlands.</p>
@@ -417,77 +294,11 @@
     </div>
   </section>
 
-  <!-- SLIDESHOW SECTION -->
+  <!-- ABOUT SECTION (kept) -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Recent Work & Projects</h2>
-      <p class="section-subtitle">
-        Browse a few examples of our work. Each slide can link to a service page or estimate request.
-      </p>
-
-      <div class="slideshow-card">
-        <div class="slideshow" id="slideshow">
-          <!-- Slide 1 -->
-          <div class="slide active" data-link="services.html">
-            <a href="services.html" aria-label="Go to services">
-              <img
-                src="https://github.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/blob/main/Holding%20Tripod.jpeg?raw=true"
-                alt="Surveying field work"
-              />
-              <div class="caption">
-                <p class="caption-title">Boundary & Property Surveys</p>
-                <p class="caption-text">Accurate boundary location, plats, and property corner identification.</p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="slide" data-link="requestestimate.html">
-            <a href="requestestimate.html" aria-label="Request an estimate">
-              <img
-                src="https://github.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/blob/main/Looking%20Through%20Tripod.jpeg?raw=true"
-                alt="Construction staking"
-              />
-              <div class="caption">
-                <p class="caption-title">Construction Staking</p>
-                <p class="caption-text">Confident build placement with reliable staking and site layout.</p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="slide" data-link="services.html">
-            <a href="services.html" aria-label="Explore services">
-              <img
-                src="https://github.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/blob/main/Viewing%20Plats.jpeg?raw=true"
-                alt="Map and planning"
-              />
-              <div class="caption">
-                <p class="caption-title">Subdivision & Planning</p>
-                <p class="caption-text">Subdivision plats, boundary adjustments, and compliance-ready deliverables.</p>
-              </div>
-            </a>
-          </div>
-
-          <!-- Controls -->
-          <div class="controls">
-            <button class="ctrl-btn" id="prevBtn" aria-label="Previous slide">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="ctrl-btn" id="nextBtn" aria-label="Next slide">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Dots -->
-        <div class="dots" id="dots"></div>
-      </div>
-
-      <!-- ABOUT SECTION -->
       <div class="about-grid">
         <div class="about-card">
-          <!-- Replace this with your portrait image URL -->
           <img
             class="portrait"
             src="https://via.placeholder.com/800x1000.png?text=Your+Portrait+Here"
@@ -498,7 +309,6 @@
         <div class="about-card">
           <h3 class="about-title">About Me</h3>
           <p class="about-text">
-            <!-- Replace this text with your bio -->
             Hi, I’m <strong>Nick Neal</strong>, owner of NG Surveying Services, LLC. I provide professional land surveying
             services with a focus on accuracy, clear communication, and reliable turnaround times. Whether you need a boundary
             survey, property line markings, or support for a closing or construction project, my goal is to make the process
@@ -518,7 +328,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -545,76 +354,24 @@
     });
   </script>
 
-  <!-- Slideshow Script (auto-rotate + dots + controls) -->
+  <!-- HERO Slideshow Script -->
   <script>
-    const slides = Array.from(document.querySelectorAll(".slide"));
-    const dotsContainer = document.getElementById("dots");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
+    const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+    let heroIndex = 0;
 
-    let currentIndex = 0;
-    let timer = null;
-
-    function buildDots() {
-      dotsContainer.innerHTML = "";
-      slides.forEach((_, i) => {
-        const d = document.createElement("button");
-        d.className = "dot" + (i === 0 ? " active" : "");
-        d.setAttribute("aria-label", "Go to slide " + (i + 1));
-        d.addEventListener("click", () => {
-          goToSlide(i);
-          restartAuto();
-        });
-        dotsContainer.appendChild(d);
-      });
+    function showHeroSlide(i) {
+      heroSlides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+      heroIndex = i;
     }
 
-    function setActive(index) {
-      slides.forEach((s, i) => s.classList.toggle("active", i === index));
-      const dots = Array.from(document.querySelectorAll(".dot"));
-      dots.forEach((d, i) => d.classList.toggle("active", i === index));
-      currentIndex = index;
+    function nextHeroSlide() {
+      const next = (heroIndex + 1) % heroSlides.length;
+      showHeroSlide(next);
     }
 
-    function goToSlide(index) {
-      const next = (index + slides.length) % slides.length;
-      setActive(next);
-    }
-
-    function nextSlide() {
-      goToSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-      goToSlide(currentIndex - 1);
-    }
-
-    function startAuto() {
-      timer = setInterval(nextSlide, 5000);
-    }
-
-    function restartAuto() {
-      clearInterval(timer);
-      startAuto();
-    }
-
-    prevBtn.addEventListener("click", () => {
-      prevSlide();
-      restartAuto();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      nextSlide();
-      restartAuto();
-    });
-
-    // Pause on hover (premium feel)
-    const slideshow = document.getElementById("slideshow");
-    slideshow.addEventListener("mouseenter", () => clearInterval(timer));
-    slideshow.addEventListener("mouseleave", () => startAuto());
-
-    buildDots();
-    startAuto();
+    // Change slide every 5 seconds
+    setInterval(nextHeroSlide, 5000);
   </script>
 </body>
 </html>
+
