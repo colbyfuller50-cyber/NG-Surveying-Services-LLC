@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NG Surveying - Editable Review Card</title>
+
+  <!-- Fonts (optional, clean modern look) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#0e2239;
+      --orange:#ff4500;
+      --bg1:#0b1b2d;
+      --bg2:#12324b;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --ring: rgba(255,69,0,0.14);
+      --shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% 20%, rgba(255,255,255,0.06), transparent 60%),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 60px 16px;
+    }
+
+    .wrap{
+      width: 100%;
+      max-width: 900px;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* Review card */
+    .review-card{
+      width: 100%;
+      max-width: 720px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 28px 26px 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(14,34,57,0.10);
+      position: relative;
+      overflow:hidden;
+    }
+
+    /* subtle accent glow */
+    .review-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(500px 140px at 50% 110%, rgba(255,69,0,0.25), transparent 60%);
+      pointer-events:none;
+      opacity:0.9;
+    }
+
+    .review-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .review-top{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:14px;
+    }
+
+    .google-icon{
+      width: 22px;
+      height: 22px;
+      display:block;
+    }
+
+    .stars{
+      display:flex;
+      gap:4px;
+      align-items:center;
+      color:#f4b400;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+      user-select:none;
+    }
+
+    .review-text{
+      margin: 0 0 18px;
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .review-author{
+      margin: 0 0 18px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
+
+    /* Logo bar */
+    .logo-bar{
+      margin-top: 10px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(14,34,57,0.10);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .logo-bar img{
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      display:block;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.18));
+    }
+
+    /* Optional little footer note */
+    .note{
+      margin: 12px 0 0;
+      text-align:center;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Editable hint (remove if you want) */
+    .edit-hint{
+      margin-top: 14px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(6px);
+    }
+
+    /* Mobile */
+    @media (max-width: 560px){
+      .review-card{
+        padding: 22px 18px 16px;
+        border-radius: 16px;
+      }
+      .review-text{
+        font-size: 1rem;
+      }
+      .logo-bar img{
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div>
+      <div class="review-card">
+        <div class="review-inner">
+          <div class="review-top">
+            <!-- Google "G" icon (safe external link). If you prefer local, replace src with your own file. -->
+            <img
+              class="google-icon"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+              alt="Google"
+            />
+            <div class="stars" aria-label="5 star review">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+
+          <!-- ✅ EDIT THIS TEXT ANYTIME -->
+          <p class="review-text">
+            We had a boundary survey done by <strong>NG Surveying</strong> and they were fantastic!
+            Nick was very thorough, explained everything to us in detail, and ensured all our
+            property lines were correctly and precisely marked. The process was easy, professional,
+            and his knowledge gave us confidence in our property boundaries. Highly recommend!
+          </p>
+
+          <!-- ✅ EDIT THIS NAME/INITIALS ANYTIME -->
+          <p class="review-author">– JP</p>
+
+          <!-- ✅ Put your logo file in the SAME folder as this HTML and keep the name "colored-logo.png"
+               OR change the src to match your logo filename -->
+          <div class="logo-bar">
+            <img src="colored-logo.png" alt="NG Surveying Services LLC logo" />
+          </div>
+        </div>
+      </div>
+
+      <p class="note">
+        Tip: Edit the review text and author directly in the HTML. No image editing needed.
+      </p>
+
+      <div class="edit-hint">
+        <div class="pill">Update: <strong>.review-text</strong></div>
+        <div class="pill">Update: <strong>.review-author</strong></div>
+        <div class="pill">Logo file: <strong>colored-logo.png</strong></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
