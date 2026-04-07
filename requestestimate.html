@@ -421,6 +421,18 @@
                 <input type="text" id="phone" name="phone" placeholder="(803) 555-1234" required />
               </div>
 
+              <label>Preferred Contact Method</label>
+                <div class="pill-group" id="jobPills" aria-label="contactmethod">
+                  <div class="pill">
+                    <input type="checkbox" id="phone" name="job[]" value="Phone" />
+                    <label for="phone"><span class="dot"></span>Phone</label>
+                  </div>
+                  <div class="pill">
+                    <input type="checkbox" id="emial" name="job[]" value="Email" />
+                    <label for="Email"><span class="dot"></span>Email</label>
+                  </div>
+                </div>
+                  
               <div class="field full">
                 <label for="address">Property Address</label>
                 <textarea id="address" name="address" rows="2" placeholder="Street, City, State, ZIP" required></textarea>
