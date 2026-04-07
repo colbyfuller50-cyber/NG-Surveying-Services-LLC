@@ -1,599 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request Estimate - NG Surveying</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Keep your global site CSS -->
-  <link rel="stylesheet" href="style.css" />
+<title>Request Estimate - NG Surveying</title>
 
-  <!-- ✅ FAVICONS (logo in browser tab) -->
-  <link rel="icon" type="image/x-icon" href="colored-logo (1).png">
-  <link rel="icon" type="image/png" sizes="32x32" href="colored-logo (1).png">
-  <link rel="icon" type="image/png" sizes="16x16" href="colored-logo (1).png">
-  <link rel="apple-touch-icon" sizes="180x180" href="colored-logo (1).png">
-  <!-- Font Awesome -->
- 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+<link rel="stylesheet" href="style.css"/>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XY8RGSYX8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5XY8RGSYX8');
-  </script>
+<link rel="icon" type="image/x-icon" href="colored-logo (1).png">
+<link rel="icon" type="image/png" sizes="32x32" href="colored-logo (1).png">
+<link rel="icon" type="image/png" sizes="16x16" href="colored-logo (1).png">
+<link rel="apple-touch-icon" sizes="180x180" href="colored-logo (1).png">
 
-  <link rel="canonical" href="https://www.ngsurveying.com/requestestimate.html" />
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Page Styles (Modern Centered Form + Pill Job Type + Premium Loading) -->
-  <style>
-    /* Center the whole page content nicely */
-    .content {
-      padding: 55px 6%;
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* centers the form area */
-    }
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XY8RGSYX8"></script>
 
-    .page-title {
-      margin: 0 0 10px;
-      color: #0e2239;
-      font-size: clamp(1.7rem, 2.4vw, 2.3rem);
-      letter-spacing: 0.2px;
-      text-align: center;
-    }
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5XY8RGSYX8');
+</script>
 
-    .page-subtitle {
-      margin: 0 0 26px;
-      color: #555;
-      line-height: 1.5;
-      max-width: 72ch;
-      text-align: center;
-    }
+<link rel="canonical" href="https://www.ngsurveying.com/requestestimate.html"/>
 
-    /* Centered layout container */
-    .estimate-shell {
-      width: 100%;
-      max-width: 980px; /* overall page width */
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      justify-items: center; /* center cards */
-    }
+<style>
 
-    /* Card */
-    .card {
-      width: 100%;
-      max-width: 760px; /* centers + keeps form from stretching too wide */
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(14, 34, 57, 0.10);
-      box-shadow: 0 10px 24px rgba(14, 34, 57, 0.10);
-      overflow: hidden;
-    }
+.content{
+padding:55px 6%;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
 
-    .card-header {
-      padding: 18px 18px 14px;
-      background: linear-gradient(180deg, rgba(14, 34, 57, 0.06), rgba(14, 34, 57, 0.0));
-      border-bottom: 1px solid rgba(14, 34, 57, 0.08);
-    }
+.page-title{
+margin:0 0 10px;
+color:#0e2239;
+font-size:clamp(1.7rem,2.4vw,2.3rem);
+text-align:center;
+}
 
-    .card-header h3 {
-      margin: 0;
-      color: #0e2239;
-      font-size: 1.05rem;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
+.page-subtitle{
+margin:0 0 26px;
+color:#555;
+max-width:72ch;
+text-align:center;
+}
 
-    .card-body {
-      padding: 18px;
-      display: flex;
-      justify-content: center; /* centers form contents */
-    }
+.estimate-shell{
+width:100%;
+max-width:980px;
+display:grid;
+gap:18px;
+justify-items:center;
+}
 
-    /* Form wrapper centers inputs nicely */
-    .form-inner {
-      width: 100%;
-      max-width: 640px; /* centers inputs within the form */
-    }
+.card{
+width:100%;
+max-width:760px;
+background:#fff;
+border-radius:16px;
+border:1px solid rgba(14,34,57,0.10);
+box-shadow:0 10px 24px rgba(14,34,57,0.10);
+overflow:hidden;
+}
 
-    /* Modern form grid */
-    .modern-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: start;
-    }
+.card-header{
+padding:18px;
+background:linear-gradient(180deg,rgba(14,34,57,0.06),rgba(14,34,57,0));
+border-bottom:1px solid rgba(14,34,57,0.08);
+}
 
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+.card-header h3{
+margin:0;
+color:#0e2239;
+display:flex;
+gap:10px;
+align-items:center;
+}
 
-    .field.full {
-      grid-column: 1 / -1;
-    }
+.card-body{
+padding:18px;
+display:flex;
+justify-content:center;
+}
 
-    label {
-      font-weight: 700;
-      color: #0e2239;
-      font-size: 0.95rem;
-    }
+.form-inner{
+width:100%;
+max-width:640px;
+}
 
-    input, textarea {
-      width: 100%;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(14, 34, 57, 0.18);
-      background: #fbfcfe;
-      color: #222;
-      outline: none;
-      transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
-      font-family: inherit;
-      font-size: 0.98rem;
-      box-sizing: border-box;
-    }
+.modern-form{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
 
-    textarea {
-      resize: vertical;
-    }
+.field{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
 
-    input:focus, textarea:focus {
-      border-color: rgba(255, 69, 0, 0.55);
-      box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.14);
-      background: #fff;
-    }
+.field.full{
+grid-column:1/-1;
+}
 
-    .help-text {
-      margin: 0;
-      color: #666;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
+label{
+font-weight:700;
+color:#0e2239;
+font-size:.95rem;
+}
 
-    /* Buttons */
-    .btn-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-start;
-      margin-top: 6px;
-    }
+input,textarea{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid rgba(14,34,57,0.18);
+background:#fbfcfe;
+transition:all .18s ease;
+font-size:.98rem;
+}
 
-    .btn-modern {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(14, 34, 57, 0.18);
-      cursor: pointer;
-      font-weight: 800;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease, opacity 180ms ease;
-      user-select: none;
-      text-decoration: none;
-      font-family: inherit;
-      font-size: 0.98rem;
-      background: #fff;
-      color: #0e2239;
-    }
+input:focus,textarea:focus{
+border-color:rgba(255,69,0,.55);
+box-shadow:0 0 0 4px rgba(255,69,0,.14);
+background:#fff;
+}
 
-    .btn-primary {
-      background: #0e2239;
-      color: #fff;
-      border-color: rgba(14, 34, 57, 0.2);
-      box-shadow: 0 10px 18px rgba(14, 34, 57, 0.18);
-    }
+textarea{
+resize:vertical;
+}
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 26px rgba(14, 34, 57, 0.25);
-    }
+.help-text{
+color:#666;
+font-size:.9rem;
+}
 
-    .btn-accent:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 69, 0, 0.40);
-      box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.12);
-    }
+.btn-modern{
+padding:12px 16px;
+border-radius:12px;
+border:1px solid rgba(14,34,57,0.18);
+font-weight:800;
+cursor:pointer;
+background:#fff;
+}
 
-    /* Premium loading state */
-    .btn-primary.is-loading {
-      opacity: 0.92;
-      cursor: not-allowed;
-      transform: none !important;
-      box-shadow: 0 10px 18px rgba(14, 34, 57, 0.18) !important;
-    }
+.btn-primary{
+background:#0e2239;
+color:#fff;
+}
 
-    .spinner {
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      border: 2px solid rgba(255,255,255,0.35);
-      border-top-color: rgba(255,255,255,0.95);
-      animation: spin 0.8s linear infinite;
-      display: inline-block;
-    }
+.btn-primary.is-loading{
+opacity:.92;
+cursor:not-allowed;
+}
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+.spinner{
+width:16px;
+height:16px;
+border-radius:999px;
+border:2px solid rgba(255,255,255,.35);
+border-top-color:#fff;
+animation:spin .8s linear infinite;
+}
 
-    /* Pill buttons for Job Types */
-    .pill-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 2px;
-    }
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
 
-    .pill {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
+/* dropdown style */
 
-    /* Hide the checkbox but keep it accessible */
-    .pill input[type="checkbox"] {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
+.select-wrap{
+position:relative;
+}
 
-    .pill label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(14, 34, 57, 0.18);
-      background: #fbfcfe;
-      color: #0e2239;
-      font-weight: 800;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
-      user-select: none;
-    }
+.select-wrap select{
+width:100%;
+padding:12px 40px 12px 12px;
+border-radius:12px;
+border:1px solid rgba(14,34,57,.18);
+background:#fbfcfe;
+font-size:.98rem;
+appearance:none;
+cursor:pointer;
+}
 
-    .pill label:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255, 69, 0, 0.35);
-      box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.10);
-      background: #fff;
-    }
+.select-wrap select:focus{
+border-color:rgba(255,69,0,.55);
+box-shadow:0 0 0 4px rgba(255,69,0,.14);
+background:#fff;
+}
 
-    /* Checked state */
-    .pill input[type="checkbox"]:checked + label {
-      border-color: rgba(255, 69, 0, 0.55);
-      background: rgba(255, 69, 0, 0.08);
-      box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.12);
-    }
+.select-icon{
+position:absolute;
+right:12px;
+top:50%;
+transform:translateY(-50%);
+color:rgba(14,34,57,.55);
+font-size:.85rem;
+}
 
-    /* Small check indicator */
-    .pill .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 2px solid rgba(14, 34, 57, 0.35);
-      background: transparent;
-      transition: border-color 160ms ease, background 160ms ease;
-    }
+/* pills */
 
-    .pill input[type="checkbox"]:checked + label .dot {
-      border-color: rgba(255, 69, 0, 0.9);
-      background: rgba(255, 69, 0, 0.9);
-    }
+.pill-group{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
 
-    /* Inline error message */
-    .inline-error {
-      display: none;
-      margin-top: 6px;
-      color: #b42318;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
+.pill input{
+position:absolute;
+opacity:0;
+}
 
-    .inline-error.show {
-      display: block;
-    }
+.pill label{
+padding:10px 12px;
+border-radius:999px;
+border:1px solid rgba(14,34,57,.18);
+font-weight:800;
+cursor:pointer;
+background:#fbfcfe;
+}
 
-    /* Map card */
-    .map-card {
-      width: 100%;
-      max-width: 760px;
-    }
+.pill input:checked + label{
+border-color:rgba(255,69,0,.55);
+background:rgba(255,69,0,.08);
+}
 
-    .map-box {
-      width: 100%;
-      height: 360px;
-      border: 0;
-      display: block;
-    }
+.inline-error{
+display:none;
+color:#b42318;
+font-weight:700;
+}
 
-    .map-footer {
-      padding: 14px 18px 18px;
-      border-top: 1px solid rgba(14, 34, 57, 0.08);
-      background: #fff;
-    }
+.inline-error.show{
+display:block;
+}
 
-    .map-note {
-      margin: 0;
-      color: #666;
-      font-size: 0.92rem;
-      line-height: 1.45;
-    }
+.map-box{
+width:100%;
+height:360px;
+border:0;
+}
 
-    /* Mobile */
-    @media (max-width: 740px) {
-      .modern-form {
-        grid-template-columns: 1fr;
-      }
-      .card-body {
-        padding: 14px;
-      }
-      .form-inner {
-        max-width: 100%;
-      }
-    }
+.site-logo .logo-img{
+height:60px;
+}
 
-    /* Logo sizing safety (matches original header look) */
-    .site-logo .logo-img {
-      height: 60px;
-      width: auto;
-      max-height: 60px;
-      display: block;
-    }
-    @media (max-width: 600px) {
-      .site-logo .logo-img {
-        height: 45px;
-        max-height: 45px;
-      }
-    }
-  </style>
+@media(max-width:740px){
+.modern-form{
+grid-template-columns:1fr;
+}
+}
+
+</style>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header>
-  <a href="index.html" class="site-logo">
-     <img
-        src="https://raw.githubusercontent.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/main/white-logo.png"
-        alt="NG Surveying Logo"
-        class="logo
-  </a>
-  
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="requestestimate.html" class="active">Request Estimate</a></li>
-    </ul>
 
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
+<header>
+
+<a href="index.html" class="site-logo">
+<img src="https://raw.githubusercontent.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/main/white-logo.png"
+alt="NG Surveying Logo"
+class="logo-img">
+</a>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="services.html">Services</a></li>
+
+<li><a href="requestestimate.html" class="active">Request Estimate</a></li>
+
+</ul>
+
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</nav>
+
 </header>
 
+<section class="content">
 
-  <!-- CONTENT -->
-  <section class="content">
-    <h2 class="page-title">Request an Estimate</h2>
-    <p class="page-subtitle">
-      Complete the form below and we’ll review your request. Use “Preview Map” to confirm the property address.
-    </p>
+<h2 class="page-title">Request an Estimate</h2>
 
-    <div class="estimate-shell">
-      <!-- FORM CARD -->
-      <div class="card">
-        <div class="card-header">
-          <h3><i class="fa-solid fa-file-signature"></i> Estimate Request Form</h3>
-        </div>
+<p class="page-subtitle">
+Complete the form below and we’ll review your request.
+</p>
 
-        <div class="card-body">
-          <div class="form-inner">
-            <form id="estimateForm" action="https://formspree.io/f/mwpaqdaa" method="POST" class="modern-form">
-              <div class="field full">
-                <label for="name">Person or Company Requesting Estimate</label>
-                <input type="text" id="name" name="name" placeholder="Ex: John Smith or ABC Construction" required />
-              </div>
+<div class="estimate-shell">
 
-              <div class="field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="_replyto" placeholder="you@email.com" required />
-              </div>
+<div class="card">
 
-              <div class="field">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" placeholder="(803) 555-1234" required />
-              </div>
+<div class="card-header">
+<h3><i class="fa-solid fa-file-signature"></i> Estimate Request Form</h3>
+</div>
 
-              <div class="field full">
-                <label for="address">Property Address</label>
-                <textarea id="address" name="address" rows="2" placeholder="Street, City, State, ZIP" required></textarea>
-                <p class="help-text">Tip: Include city + state for best map preview results.</p>
+<div class="card-body">
 
-                <div class="btn-row">
-                  <button type="button" class="btn-modern btn-accent" onclick="updateMap()">
-                    <i class="fa-solid fa-map-location-dot"></i> Preview Map
-                  </button>
-                </div>
-              </div>
+<div class="form-inner">
 
-              <div class="field full">
-                <label for="taxmap">Tax Map (If Known)</label>
-                <input type="text" id="taxmap" name="Tax Map" placeholder="Ex: R123456789" />
-              </div>
+<form id="estimateForm"
+action="https://formspree.io/f/mwpaqdaa"
+method="POST"
+class="modern-form">
 
-              <!-- PILL JOB TYPES (under Tax Map) -->
-              <div class="field full">
-                <label>Job Type (Select all that apply)</label>
-                <div class="pill-group" id="jobPills" aria-label="Job Type">
-                  <div class="pill">
-                    <input type="checkbox" id="job-boundary" name="job[]" value="Boundary Survey" />
-                    <label for="job-boundary"><span class="dot"></span> Boundary Survey</label>
-                  </div>
+<div class="field full">
+<label>Name or Company</label>
 
-                  <div class="pill">
-                    <input type="checkbox" id="job-line" name="job[]" value="Property Line Marking" />
-                    <label for="job-line"><span class="dot"></span> Property Line Marking</label>
-                  </div>
+<input type="text"
+name="name"
+required>
+</div>
 
-                  <div class="pill">
-                    <input type="checkbox" id="job-closing" name="job[]" value="Closing Survey" />
-                    <label for="job-closing"><span class="dot"></span> Closing Survey</label>
-                  </div>
+<div class="field">
+<label>Email</label>
 
-                  <div class="pill">
-                    <input type="checkbox" id="job-subdivision" name="job[]" value="Subdivision Survey" />
-                    <label for="job-subdivision"><span class="dot"></span> Subdivision Survey</label>
-                  </div>
+<input type="email"
+name="_replyto"
+required>
+</div>
 
-                  <div class="pill">
-                    <input type="checkbox" id="job-staking" name="job[]" value="Residential Construction Staking" />
-                    <label for="job-staking"><span class="dot"></span> Residential Construction Staking</label>
-                  </div>
-                </div>
+<div class="field">
+<label>Phone</label>
 
-                <div id="jobError" class="inline-error">Please select at least one job type.</div>
-              </div>
+<input type="text"
+name="phone"
+required>
+</div>
 
-              <div class="field full">
-                <label for="details">Description of Survey Needs</label>
-                <textarea id="details" name="details" rows="5" placeholder="Tell us what you need, timeline, and any known details..." required></textarea>
-              </div>
+<!-- NEW DROPDOWN -->
 
-              <div class="field full">
-                <button id="submitBtn" type="submit" class="btn-modern btn-primary">
-                  <i class="fa-solid fa-paper-plane"></i>
-                  <span class="btn-text">Submit Request</span>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+<div class="field">
+<label>Preferred Contact Method</label>
 
-      <!-- MAP CARD -->
-      <div class="card map-card">
-        <div class="card-header">
-          <h3><i class="fa-solid fa-map"></i> Address Preview</h3>
-        </div>
+<div class="select-wrap">
 
-        <iframe
-          id="map"
-          class="map-box"
-          src="https://www.google.com/maps?q=Columbia,+SC&output=embed"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+<select name="Preferred Contact Method" required>
 
-        <div class="map-footer">
-          <p class="map-note">
-            After entering the property address, click <strong>Preview Map</strong> to confirm it’s correct before submitting.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<option value="">
+Select
+</option>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 NG Surveying Services, LLC. | Columbia, SC</p>
-  </footer>
+<option>Email</option>
 
-  <!-- Mobile Nav Script -->
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const body = document.body;
+<option>Phone</option>
 
-    function toggleMenu() {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      body.classList.toggle('menu-open');
-    }
+</select>
 
-    hamburger.addEventListener('click', toggleMenu);
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') toggleMenu();
-    });
-  </script>
+<i class="fa-solid fa-chevron-down select-icon"></i>
 
-  <!-- Map Preview -->
-  <script>
-    function updateMap() {
-      var address = document.getElementById("address").value;
-      var map = document.getElementById("map");
-      var encodedAddress = encodeURIComponent(address);
-      map.src = "https://www.google.com/maps?q=" + encodedAddress + "&output=embed";
-    }
-  </script>
+</div>
+</div>
 
-  <!-- Premium submit loading + require at least one job pill -->
-  <script>
-    const form = document.getElementById("estimateForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const btnText = submitBtn.querySelector(".btn-text");
-    const jobError = document.getElementById("jobError");
-    const jobCheckboxes = Array.from(document.querySelectorAll('input[name="job[]"]'));
+<div class="field full">
+<label>Property Address</label>
 
-    function setLoading(isLoading) {
-      if (isLoading) {
-        submitBtn.classList.add("is-loading");
-        submitBtn.setAttribute("disabled", "disabled");
-        submitBtn.innerHTML = `<span class="spinner" aria-hidden="true"></span><span class="btn-text">Sending...</span>`;
-      } else {
-        submitBtn.classList.remove("is-loading");
-        submitBtn.removeAttribute("disabled");
-        submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i><span class="btn-text">Submit Request</span>`;
-      }
-    }
+<textarea id="address"
+name="address"
+rows="2"
+required></textarea>
 
-    function hasJobSelected() {
-      return jobCheckboxes.some(cb => cb.checked);
-    }
+<button type="button"
+class="btn-modern"
+onclick="updateMap()">
+Preview Map
+</button>
 
-    // Hide error as soon as they select something
-    jobCheckboxes.forEach(cb => {
-      cb.addEventListener("change", () => {
-        if (hasJobSelected()) jobError.classList.remove("show");
-      });
-    });
+</div>
 
-    form.addEventListener("submit", (e) => {
-      // Require at least one pill selected
-      if (!hasJobSelected()) {
-        e.preventDefault();
-        jobError.classList.add("show");
-        // gentle scroll into view
-        document.getElementById("jobPills").scrollIntoView({ behavior: "smooth", block: "center" });
-        return;
-      }
+<div class="field full">
+<label>Tax Map</label>
 
-      // Show loading immediately (Formspree will navigate away on success)
-      setLoading(true);
+<input name="Tax Map">
+</div>
 
-      // If Formspree blocks / connection fails and the page doesn't navigate,
-      // re-enable after a short delay so the button isn't stuck.
-      window.setTimeout(() => setLoading(false), 12000);
-    });
-  </script>
+<div class="field full">
+
+<label>Job Type</label>
+
+<div class="pill-group">
+
+<div class="pill">
+<input type="checkbox"
+name="job[]"
+value="Boundary Survey">
+
+<label>Boundary Survey</label>
+</div>
+
+<div class="pill">
+<input type="checkbox"
+name="job[]"
+value="Property Line Marking">
+
+<label>Property Line</label>
+</div>
+
+</div>
+
+<div id="jobError"
+class="inline-error">
+
+Select at least one job type
+
+</div>
+
+</div>
+
+<div class="field full">
+
+<label>Description</label>
+
+<textarea name="details"
+rows="5"
+required></textarea>
+
+</div>
+
+<div class="field full">
+
+<button id="submitBtn"
+type="submit"
+class="btn-modern btn-primary">
+
+Submit Request
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-header">
+
+<h3>
+
+<i class="fa-solid fa-map"></i>
+
+Address Preview
+
+</h3>
+
+</div>
+
+<iframe id="map"
+class="map-box"
+src="https://www.google.com/maps?q=Columbia,+SC&output=embed">
+
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 NG Surveying Services LLC
+
+</p>
+
+</footer>
+
+<script>
+
+function updateMap(){
+
+let address =
+document.getElementById("address").value;
+
+document.getElementById("map").src =
+"https://www.google.com/maps?q="
++ encodeURIComponent(address)
++ "&output=embed";
+
+}
+
+const form =
+document.getElementById("estimateForm");
+
+const jobCheckboxes =
+document.querySelectorAll('input[name="job[]"]');
+
+const error =
+document.getElementById("jobError");
+
+form.addEventListener("submit",(e)=>{
+
+let selected =
+Array.from(jobCheckboxes)
+.some(x=>x.checked);
+
+if(!selected){
+
+e.preventDefault();
+
+error.classList.add("show");
+
+}
+
+});
+
+</script>
+
 </body>
+
 </html>
-
-
