@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Request Estimate - NG Surveying</title>
 
-  <!-- Keep your global site CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ✅ FAVICONS (logo in browser tab) -->
+  <!-- FAVICONS -->
   <link rel="icon" type="image/x-icon" href="colored-logo (1).png">
   <link rel="icon" type="image/png" sizes="32x32" href="colored-logo (1).png">
   <link rel="icon" type="image/png" sizes="16x16" href="colored-logo (1).png">
   <link rel="apple-touch-icon" sizes="180x180" href="colored-logo (1).png">
+
   <!-- Font Awesome -->
- 
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -31,14 +30,12 @@
 
   <link rel="canonical" href="https://www.ngsurveying.com/requestestimate.html" />
 
-  <!-- Page Styles (Modern Centered Form + Pill Job Type + Premium Loading) -->
   <style>
-    /* Center the whole page content nicely */
     .content {
       padding: 55px 6%;
       display: flex;
       flex-direction: column;
-      align-items: center; /* centers the form area */
+      align-items: center;
     }
 
     .page-title {
@@ -57,20 +54,18 @@
       text-align: center;
     }
 
-    /* Centered layout container */
     .estimate-shell {
       width: 100%;
-      max-width: 980px; /* overall page width */
+      max-width: 980px;
       display: grid;
       grid-template-columns: 1fr;
       gap: 18px;
-      justify-items: center; /* center cards */
+      justify-items: center;
     }
 
-    /* Card */
     .card {
       width: 100%;
-      max-width: 760px; /* centers + keeps form from stretching too wide */
+      max-width: 760px;
       background: #fff;
       border-radius: 16px;
       border: 1px solid rgba(14, 34, 57, 0.10);
@@ -96,16 +91,14 @@
     .card-body {
       padding: 18px;
       display: flex;
-      justify-content: center; /* centers form contents */
+      justify-content: center;
     }
 
-    /* Form wrapper centers inputs nicely */
     .form-inner {
       width: 100%;
-      max-width: 640px; /* centers inputs within the form */
+      max-width: 640px;
     }
 
-    /* Modern form grid */
     .modern-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -129,7 +122,9 @@
       font-size: 0.95rem;
     }
 
-    input, textarea {
+    input,
+    textarea,
+    select {
       width: 100%;
       padding: 12px 12px;
       border-radius: 12px;
@@ -147,7 +142,9 @@
       resize: vertical;
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus,
+    select:focus {
       border-color: rgba(255, 69, 0, 0.55);
       box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.14);
       background: #fff;
@@ -160,7 +157,6 @@
       line-height: 1.4;
     }
 
-    /* Buttons */
     .btn-row {
       display: flex;
       gap: 12px;
@@ -207,7 +203,6 @@
       box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.12);
     }
 
-    /* Premium loading state */
     .btn-primary.is-loading {
       opacity: 0.92;
       cursor: not-allowed;
@@ -229,7 +224,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Pill buttons for Job Types */
     .pill-group {
       display: flex;
       flex-wrap: wrap;
@@ -243,7 +237,6 @@
       align-items: center;
     }
 
-    /* Hide the checkbox but keep it accessible */
     .pill input[type="checkbox"] {
       position: absolute;
       opacity: 0;
@@ -273,14 +266,12 @@
       background: #fff;
     }
 
-    /* Checked state */
     .pill input[type="checkbox"]:checked + label {
       border-color: rgba(255, 69, 0, 0.55);
       background: rgba(255, 69, 0, 0.08);
       box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.12);
     }
 
-    /* Small check indicator */
     .pill .dot {
       width: 10px;
       height: 10px;
@@ -295,7 +286,6 @@
       background: rgba(255, 69, 0, 0.9);
     }
 
-    /* Inline error message */
     .inline-error {
       display: none;
       margin-top: 6px;
@@ -308,7 +298,6 @@
       display: block;
     }
 
-    /* Map card */
     .map-card {
       width: 100%;
       max-width: 760px;
@@ -334,26 +323,27 @@
       line-height: 1.45;
     }
 
-    /* Mobile */
     @media (max-width: 740px) {
       .modern-form {
         grid-template-columns: 1fr;
       }
+
       .card-body {
         padding: 14px;
       }
+
       .form-inner {
         max-width: 100%;
       }
     }
 
-    /* Logo sizing safety (matches original header look) */
     .site-logo .logo-img {
       height: 60px;
       width: auto;
       max-height: 60px;
       display: block;
     }
+
     @media (max-width: 600px) {
       .site-logo .logo-img {
         height: 45px;
@@ -366,28 +356,28 @@
 <body>
   <!-- HEADER -->
   <header>
-  <a href="index.html" class="site-logo">
-     <img
+    <a href="index.html" class="site-logo">
+      <img
         src="https://raw.githubusercontent.com/colbyfuller50-cyber/NG-Surveying-Services-LLC/main/white-logo.png"
         alt="NG Surveying Logo"
-        class="logo
-  </a>
-  
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="requestestimate.html" class="active">Request Estimate</a></li>
-    </ul>
+        class="logo-img"
+      />
+    </a>
 
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-</header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="requestestimate.html" class="active">Request Estimate</a></li>
+      </ul>
 
+      <div class="hamburger" tabindex="0" aria-label="Toggle navigation" role="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
   <!-- CONTENT -->
   <section class="content">
@@ -412,27 +402,24 @@
               </div>
 
               <div class="field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="_replyto" placeholder="you@email.com" required />
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" name="_replyto" placeholder="you@email.com" required />
               </div>
 
               <div class="field">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" placeholder="(803) 555-1234" required />
+                <label for="contactPhone">Phone Number</label>
+                <input type="text" id="contactPhone" name="phone" placeholder="(803) 555-1234" required />
               </div>
+
               <div class="field full">
-              <label>Preferred Contact Method</label>
-                <div class="pill-group" id="jobPills" aria-label="contactmethod">
-                  <div class="pill">
-                    <input type="checkbox" id="phone" name="job[]" value="Phone" />
-                    <label for="phone"><span class="dot"></span>Phone</label>
-                  </div>
-                  <div class="pill">
-                    <input type="checkbox" id="email" name="job[]" value="Email" />
-                    <label for="Email"><span class="dot"></span>Email</label>
-                  </div>
-                </div>
-                </div>  
+                <label for="preferredMethod">Preferred Contact Method</label>
+                <select id="preferredMethod" name="preferred_contact_method" required>
+                  <option value="" selected disabled>Select preferred method</option>
+                  <option value="Phone">Phone</option>
+                  <option value="Email">Email</option>
+                </select>
+              </div>
+
               <div class="field full">
                 <label for="address">Property Address</label>
                 <textarea id="address" name="address" rows="2" placeholder="Street, City, State, ZIP" required></textarea>
@@ -450,10 +437,9 @@
                 <input type="text" id="taxmap" name="Tax Map" placeholder="Ex: R123456789" />
               </div>
 
-              <!-- PILL JOB TYPES (under Tax Map) -->
               <div class="field full">
                 <label>Job Type (Select all that apply)</label>
-                <div class="pill-group" id="jobPills" aria-label="Job Type">
+                <div class="pill-group" id="jobTypePills" aria-label="Job Type">
                   <div class="pill">
                     <input type="checkbox" id="job-boundary" name="job[]" value="Boundary Survey" />
                     <label for="job-boundary"><span class="dot"></span> Boundary Survey</label>
@@ -542,15 +528,24 @@
 
     hamburger.addEventListener('click', toggleMenu);
     hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') toggleMenu();
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
     });
   </script>
 
   <!-- Map Preview -->
   <script>
     function updateMap() {
-      var address = document.getElementById("address").value;
+      var address = document.getElementById("address").value.trim();
       var map = document.getElementById("map");
+
+      if (!address) {
+        map.src = "https://www.google.com/maps?q=Columbia,+SC&output=embed";
+        return;
+      }
+
       var encodedAddress = encodeURIComponent(address);
       map.src = "https://www.google.com/maps?q=" + encodedAddress + "&output=embed";
     }
@@ -560,7 +555,6 @@
   <script>
     const form = document.getElementById("estimateForm");
     const submitBtn = document.getElementById("submitBtn");
-    const btnText = submitBtn.querySelector(".btn-text");
     const jobError = document.getElementById("jobError");
     const jobCheckboxes = Array.from(document.querySelectorAll('input[name="job[]"]'));
 
@@ -568,11 +562,11 @@
       if (isLoading) {
         submitBtn.classList.add("is-loading");
         submitBtn.setAttribute("disabled", "disabled");
-        submitBtn.innerHTML = `<span class="spinner" aria-hidden="true"></span><span class="btn-text">Sending...</span>`;
+        submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span><span class="btn-text">Sending...</span>';
       } else {
         submitBtn.classList.remove("is-loading");
         submitBtn.removeAttribute("disabled");
-        submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i><span class="btn-text">Submit Request</span>`;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i><span class="btn-text">Submit Request</span>';
       }
     }
 
@@ -580,28 +574,23 @@
       return jobCheckboxes.some(cb => cb.checked);
     }
 
-    // Hide error as soon as they select something
     jobCheckboxes.forEach(cb => {
       cb.addEventListener("change", () => {
-        if (hasJobSelected()) jobError.classList.remove("show");
+        if (hasJobSelected()) {
+          jobError.classList.remove("show");
+        }
       });
     });
 
     form.addEventListener("submit", (e) => {
-      // Require at least one pill selected
       if (!hasJobSelected()) {
         e.preventDefault();
         jobError.classList.add("show");
-        // gentle scroll into view
-        document.getElementById("jobPills").scrollIntoView({ behavior: "smooth", block: "center" });
+        document.getElementById("jobTypePills").scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
 
-      // Show loading immediately (Formspree will navigate away on success)
       setLoading(true);
-
-      // If Formspree blocks / connection fails and the page doesn't navigate,
-      // re-enable after a short delay so the button isn't stuck.
       window.setTimeout(() => setLoading(false), 12000);
     });
   </script>
